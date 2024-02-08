@@ -6,8 +6,8 @@ import useHouseList from "./useHouseList";
 import fetchSearch from "./microservice/fetchSearch";
 
 const LOCATIONS = [
-  "Paris, France",
   "Dallas, Texas",
+  "Paris, France",
   "Denver, Colorado",
   "Toronto, Canada",
 ];
@@ -22,7 +22,10 @@ const SearchParams = () => {
   const [homeStyles] = useHouseList(location);
 
   const results = useQuery(["search", requestParams], fetchSearch);
-  const houses = results?.data?.houses ?? [];
+  console.log("CHECK FETCHSEARCH: ", results?.data?.houses);
+
+  let houses = results?.data?.houses ?? [];
+
   console.log("CHECK houses: ", houses);
   return (
     <div className="search-params">
@@ -38,7 +41,7 @@ const SearchParams = () => {
         }}
       >
         {boughtHouse ? (
-          <div className="pet image-container">
+          <div className="house image-container">
             <img src={boughtHouse.images[0]} alt={boughtHouse.name} />
           </div>
         ) : null}

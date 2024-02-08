@@ -20,14 +20,7 @@
 
 function fetchHouseList({ queryKey }) {
   const selectedLocation = queryKey[1];
-  // let selectedLocation = '';
   console.log("SELECTED LOCATION: ", selectedLocation);
-
-  // if (location === 'Dallas, Texas') {
-  //   selectedLocation = 'location1'
-  // } else if (location === 'Paris, France') {
-  //   selectedLocation = 'location2'
-  // }
 
   const data = [
     {

@@ -24,24 +24,24 @@ const Details = () => {
   }
 
   // TODO: Change
-  const pet = results.data.houses[0];
+  const house = results.data.houses[0];
 
   return (
     <div className="details">
-      <Carousel images={pet.images} />
+      <Carousel images={house.images} />
       <div>
-        <h1>{pet.name}</h1>
-        <h2>{`${pet.animal} — ${pet.breed} — ${pet.city}, ${pet.state}`}</h2>
-        <button onClick={() => setShowModal(true)}>Adopt {pet.name}</button>
-        <p>{pet.description}</p>
+        <h1>{house.name}</h1>
+        <h2>{`${house.animal} — ${house.breed} — ${house.city}, ${house.state}`}</h2>
+        <button onClick={() => setShowModal(true)}>Adopt {house.name}</button>
+        <p>{house.description}</p>
         {showModal ? (
           <Modal>
             <div>
-              <h1>Would you like to adopt {pet.name}?</h1>
+              <h1>Would you like to adopt {house.name}?</h1>
               <div className="buttons">
                 <button
                   onClick={() => {
-                    setBoughtHouse(pet);
+                    setBoughtHouse(house);
                     navigate("/");
                   }}
                 >

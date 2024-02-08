@@ -5,7 +5,7 @@ const House = (props) => {
   const { name, price, images, id } = props;
 
   return (
-    <Link to={`/details/${id}`} className="pet">
+    <Link to={`/details/${id}`} className="house">
       <div className="image-container">
         <img data-testid="thumbnail" src={images} alt={name} />
       </div>

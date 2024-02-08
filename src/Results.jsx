@@ -2,6 +2,8 @@ import House from "./House";
 
 const Results = ({ houses }) => {
   console.log("CHECK RESULTS: ", houses);
+
+
   return (
     <div className="search">
       {!houses.length ? (
