@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useState } from "react";
-import BoughtHouseContext from "./BoughtHouseContext";
+import BoughtHouseContext from "../BoughtHouseContext";
 import Modal from "./Modal";
-import ErrorBoundary from "./ErrorBoundary";
-import fetchHouse from "./microservice/fetchHouse";
-import Carousel from "./Carousel";
+import ErrorBoundary from "../ErrorBoundary";
+import fetchHouse from "../microservice/fetchHouse";
+import Carousel from "./PictureMap";
 
 const Details = () => {
   const { id } = useParams();
@@ -23,7 +23,6 @@ const Details = () => {
     );
   }
 
-  // TODO: Change
   const house = results.data.houses[0];
 
   return (
@@ -31,13 +30,13 @@ const Details = () => {
       <Carousel images={house.images} />
       <div>
         <h1>{house.name}</h1>
-        <h2>{`${house.animal} — ${house.breed} — ${house.city}, ${house.state}`}</h2>
-        <button onClick={() => setShowModal(true)}>Adopt {house.name}</button>
+        <h2>{`${house.location} — ${house.price}`}</h2>
+        <button onClick={() => setShowModal(true)}>Buy {house.name}</button>
         <p>{house.description}</p>
         {showModal ? (
           <Modal>
             <div>
-              <h1>Would you like to adopt {house.name}?</h1>
+              <h1>Would you like to buy {house.name}?</h1>
               <div className="buttons">
                 <button
                   onClick={() => {

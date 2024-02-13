@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const House = (props) => {
   console.log("PROPS: ", props);
-  const { name, price, images, id } = props;
+  const { name, price, images, id, homeStyle } = props;
 
   return (
     <Link to={`/details/${id}`} className="house">
@@ -11,7 +11,8 @@ const House = (props) => {
       </div>
       <div className="info">
         <h1>{name}</h1>
-        <h2>{`${name} — ${price}`}</h2>
+        <h2>{`Home Style: ${homeStyle}`}</h2>
+        <h2>{`Price: ${price}`}</h2>
       </div>
     </Link>
   );

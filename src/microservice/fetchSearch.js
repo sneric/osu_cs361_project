@@ -68,6 +68,8 @@ async function fetchSearch({ queryKey }) {
     response = microserviceData.houses.filter(house => house.location === requestData.location);
   } else if (requestData.location && requestData.homeStyle) {
     response = microserviceData.houses.filter(house => house.location === requestData.location && house.homeStyle === requestData.homeStyle);
+  } else {
+    response = microserviceData.houses;
   }
 
   console.log("FETCH SEARCH RESPONSE: ", response);
