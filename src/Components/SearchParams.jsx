@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Results from "./Results";
-import BoughtHouseContext from "./BoughtHouseContext";
-import useHouseList from "./useHouseList";
-import fetchSearch from "./microservice/fetchSearch";
+import BoughtHouseContext from "../BoughtHouseContext";
+import useHouseList from "../useHouseList";
+import fetchSearch from "../microservice/fetchSearch";
 
 const LOCATIONS = [
   "Dallas, Texas",
@@ -46,8 +46,10 @@ const SearchParams = () => {
           </div>
         ) : null}
 
+        <h2>Search for Houses to Buy:</h2> 
+
         <label htmlFor="location">
-          Location
+          Search by House Location
           <select
             id="location"
             name="location"
@@ -68,7 +70,7 @@ const SearchParams = () => {
         </label>
 
         <label htmlFor="homeStyle">
-          House Style
+          Advanced Option: Search by House Style
           <select disabled={!homeStyles.length} id="homeStyle" name="homeStyle">
             <option />
             {homeStyles.map((homeStyle) => (
