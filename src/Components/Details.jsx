@@ -4,14 +4,14 @@ import { useContext, useState } from "react";
 import BoughtHouseContext from "../BoughtHouseContext";
 import Modal from "./Modal";
 import ErrorBoundary from "../ErrorBoundary";
-import fetchHouse from "../microservice/fetchHouse";
+import getHouse from "../microservice/getHouse";
 import Carousel from "./PictureMap";
 
 const Details = () => {
   const { id } = useParams();
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
-  const results = useQuery(["details", id], fetchHouse);
+  const results = useQuery(["details", id], getHouse);
   // eslint-disable-next-line no-unused-vars
   const [_, setBoughtHouse] = useContext(BoughtHouseContext);
 
@@ -23,8 +23,8 @@ const Details = () => {
     );
   }
 
-  const house = results.data.houses[0];
-
+  // const house = results.data.houses[0];
+  const house = results.data;
   return (
     <div className="details">
       <Carousel images={house.images} />

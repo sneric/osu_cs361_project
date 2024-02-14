@@ -1,0 +1,26 @@
+# schema.graphql
+
+type House {
+  id: ID!
+  key: String!
+  homeStyle: String!
+  location: String!
+  name: String!
+  price: Float!
+}
+
+type HouseList {
+  location: String!
+  houses : [House!]!
+
+type SearchDetails {
+  id: ID!
+  name: String!
+  posts: [Post!]!
+}
+
+type Query {
+  getHouse(id: ID!): House!
+  getHouseList(location: String!): [HouseList!]!
+  getSearchResults(id: ID!): [House!]!
+}
