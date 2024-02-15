@@ -15,7 +15,6 @@ const houses = [
   { id: '2', key: 'house-2', homeStyle: 'Farmhouse', location: Location.PARIS, name: 'Beautiful Paris Farmhouse', price: 300000.00},
 ];
 
-// Root resolvers
 const resolvers = {
   Query: {
     getHouse: (_, args) => houses.find((house) => house.id === args.id),
@@ -25,7 +24,6 @@ const resolvers = {
   },
 };
 
-// Load schema from file
 const typeDefs = gql`
 type House {
   id: ID
@@ -58,7 +56,6 @@ const server = new ApolloServer({ typeDefs, resolvers, cors: {
 const app = express();
 
 await server.start();
-// GraphQL endpoint
 server.applyMiddleware({ app });
 
 
