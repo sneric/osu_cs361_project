@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import BoughtHouseContext from "../BoughtHouseContext";
 import Modal from "./Modal";
 import ErrorBoundary from "../ErrorBoundary";
-import getHouse from "../microservice/getHouse";
+import getHouse from "../endpoints/getHouse";
 import Carousel from "./PictureMap";
 
 const Details = () => {

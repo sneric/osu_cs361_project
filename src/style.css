@@ -5,7 +5,7 @@
 
 body {
   background-color: #5da28d;
-  background-image: url("./microservice/house-pics/wallpaper.jpg");
+  background-image: url("./house-pics/wallpaper.jpg");
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -90,7 +90,7 @@ body {
 header > a,
 #root > div > h1 {
   display: inline-block;
-  background-image: url("./microservice/house-pics/title.jpg");
+  background-image: url("./house-pics/title.jpg");
   filter: brightness(150%);
   width: 612px;
   height: 192px;

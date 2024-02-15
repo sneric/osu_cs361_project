@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import Results from "./Results";
 import BoughtHouseContext from "../BoughtHouseContext";
 import useHouseList from "../useHouseList";
-import fetchSearch from "../microservice/fetchSearch";
+import getSearch from "../endpoints/getSearch";
 
 const LOCATIONS = [
   "Dallas, Texas",
@@ -21,8 +21,8 @@ const SearchParams = () => {
   const [location, setLocation] = useState("");
   const [homeStyles] = useHouseList(location);
 
-  const results = useQuery(["search", requestParams], fetchSearch);
-  console.log("CHECK FETCHSEARCH: ", results?.data?.houses);
+  const results = useQuery(["search", requestParams], getSearch);
+  console.log("CHECK getSearch: ", results?.data?.houses);
 
   let houses = results?.data?.houses ?? [];
 
