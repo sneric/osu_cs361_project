@@ -3,7 +3,6 @@ import House from "./House";
 const Results = ({ houses }) => {
   console.log("CHECK RESULTS: ", houses);
 
-
   return (
     <div className="search">
       {!houses.length ? (
@@ -17,7 +16,7 @@ const Results = ({ houses }) => {
               price={house.price}
               name={house.name}
               homeStyle={house.homeStyle}
-              images={house.images}
+              images={house.image}
               id={house.id}
             />
           );

@@ -29,6 +29,20 @@ const SearchParams = () => {
   console.log("CHECK houses: ", houses);
   return (
     <div className="search-params">
+      <div className="details">
+        <h3>
+          <b>Description: </b>
+        </h3>
+        <p>
+          1. This website allows you to search for homes to buy based on
+          location (city, state) and home style.
+          <br></br>
+          2. Use the drop down menus below to search for a home by location or
+          home style
+          <br></br>
+          3. All available homes are presented in the Results section below.
+        </p>
+      </div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -41,12 +55,14 @@ const SearchParams = () => {
         }}
       >
         {boughtHouse ? (
-          <div className="house image-container">
-            <img src={boughtHouse.images[0]} alt={boughtHouse.name} />
+          <div>
+            <h1>You bought {boughtHouse.name}!</h1>
+            <b></b>
+            {/* <img src={boughtHouse.images[0]} alt={boughtHouse.name} /> */}
           </div>
         ) : null}
 
-        <h2>Search for Houses to Buy:</h2> 
+        <h2>Search for Houses to Buy:</h2>
 
         <label htmlFor="location">
           Search by House Location

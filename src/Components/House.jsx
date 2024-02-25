@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const House = (props) => {
-  console.log("PROPS: ", props);
   const { name, price, images, id, homeStyle } = props;
 
   return (
