@@ -23,6 +23,7 @@ type Query {
 ```
 
 #### Endpoint Usage
+
 1. cardActivityDayDiff: send in a ISO Date Timestamp and recieve the number of days between the input the app's last activity ISO Date Timestamp
 
 2. getAppActivityDate: send in no arguments and recieve the app's last activity ISO Date Timestamp
@@ -39,7 +40,7 @@ type Query {
 
 ## How to REQUEST Data
 
-To request data, you can use the `node-fetch` API to call an avaliable GraphQL endpoint on the localhost:
+To request data, you can use the `node-fetch` API to call an avaliable GraphQL endpoint on the localhost by running `node client.js`:
 
 ```javascript
 const graphqlEndpoint = 'http://localhost:3001/graphql';

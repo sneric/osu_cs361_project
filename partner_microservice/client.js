@@ -4,9 +4,9 @@ const graphqlEndpoint = 'http://localhost:3001/graphql';
 
 const cardActivityDate = new Date().toISOString();
 
-const cardActivityDayDiffQuery = `
-  query CardActivityDayDiff($date: String!) {
-    cardActivityDayDiff(date: $date) {
+const getCardActivityDayDiffQuery = `
+  query GetCardActivityDayDiff($date: String!) {
+    getCardActivityDayDiff(date: $date) {
       days
     }
   }
@@ -17,7 +17,7 @@ fetch(graphqlEndpoint, {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify({ query: cardActivityDayDiffQuery, variables: {date: cardActivityDate }}),
+  body: JSON.stringify({ query: getCardActivityDayDiffQuery, variables: {date: cardActivityDate }}),
 })
   .then((response) => response.json())
   .then((data) => {

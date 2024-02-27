@@ -18,7 +18,7 @@ function updateAppActivityDate() {
 // Root resolvers
 const resolvers = {
   Query: {
-    cardActivityDayDiff: (_, { date }) => {
+    getCardActivityDayDiff: (_, { date }) => {
       const diffTime = Math.abs(new Date(date) - new Date(microservice_data.app_last_activity_date));
       const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
       return { days: diffDays || 0 };

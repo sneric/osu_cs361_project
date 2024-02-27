@@ -9,7 +9,7 @@ type AppDate {
 }
 
 type Query {
-  cardActivityDayDiff(date: String!): DayDiff
+  getCardActivityDayDiff(date: String!): DayDiff
   getAppActivityDate: AppDate
   updateAppActivityDate: AppDate
 }
