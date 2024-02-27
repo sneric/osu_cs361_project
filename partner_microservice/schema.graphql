@@ -1,0 +1,15 @@
+# schema.graphql
+
+type DayDiff {
+  days: Int!
+}
+
+type AppDate {
+  date: String!
+}
+
+type Query {
+  cardActivityDayDiff(date: String!): DayDiff
+  getAppActivityDate: AppDate
+  updateAppActivityDate: AppDate
+}
