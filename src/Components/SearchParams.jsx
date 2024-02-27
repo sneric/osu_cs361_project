@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Results from "./Results";
 import BoughtHouseContext from "../BoughtHouseContext";
-import useHouseList from "../useHouseList";
+import useHouseList from "../endpoints/useHouseList";
 import getSearch from "../endpoints/getSearch";
 
 const LOCATIONS = [

@@ -23,7 +23,6 @@ const Details = () => {
     );
   }
 
-  // const house = results.data.houses[0];
   const house = results.data;
   console.log("LATEST: ", house);
   return (
@@ -33,11 +32,17 @@ const Details = () => {
         <h1>{house.name}</h1>
         <h2>{`Location: ${house.location}`}</h2>
         <h2>{`Price: ${house.price}`}</h2>
-        <button onClick={() => setShowModal(true)}>Buy {house.name}</button>
         <p>
           <b>Description: </b>
           {house.description}
         </p>
+        <button onClick={() => setShowModal(true)}>Buy {house.name}</button>
+        <p>
+          <b></b> 
+        </p>
+        <div className="buttons">
+          <button onClick={() => navigate("/")}>Back to Home Page</button>
+        </div>
         {showModal ? (
           <Modal>
             <div>

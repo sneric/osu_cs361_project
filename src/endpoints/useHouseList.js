@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import getHouseList from "./endpoints/getHouseList";
+import getHouseList from "./getHouseList";
 
 export default function useHouseList(location) {
   const results = useQuery(["houses", location], getHouseList);
