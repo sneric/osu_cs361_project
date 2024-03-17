@@ -7,7 +7,7 @@ const getHouseList = async ({ queryKey }) => {
 
   const cache = new InMemoryCache();
   const client = new ApolloClient({
-    uri: "http://localhost:3001/graphql", // Update with your server URL
+    uri: "http://localhost:4000/graphql", // Update with your server URL
     cache,
   });
 

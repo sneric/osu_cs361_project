@@ -9,13 +9,13 @@ const getHouse = async ({ queryKey }) => {
 
   const cache = new InMemoryCache();
   const client = new ApolloClient({
-    uri: "http://localhost:3001/graphql", // Update with your server URL
+    uri: "http://localhost:4000/graphql", // Update with your server URL
     cache,
   });
 
   const query = gql`
-    query GetHouse($id: ID!) {
-      getHouse(id: $id) {
+    query house($id: ID!) {
+      house(id: $id) {
         id
         description
         key
@@ -55,14 +55,14 @@ const getHouse = async ({ queryKey }) => {
   };
 
   const response = {
-    description: results.getHouse.description,
-    price: results.getHouse.price,
-    name: results.getHouse.name,
-    location: results.getHouse.location,
-    house: results.getHouse.homeStyle,
-    images: [getHouseImage(results.getHouse.key), house2, house3],
+    description: results.house.description,
+    price: results.house.price,
+    name: results.house.name,
+    location: results.house.location,
+    house: results.house.homeStyle,
+    images: [getHouseImage(results.house.key), house2, house3],
   };
-  console.log("FETCH HOUSE RESPONSE: ", response);
+
   return response;
 };
 

@@ -6,10 +6,13 @@ import useHouseList from "../endpoints/useHouseList";
 import getSearch from "../endpoints/getSearch";
 
 const LOCATIONS = [
-  "Dallas, Texas",
-  "Paris, France",
-  "Denver, Colorado",
-  "Toronto, Canada",
+  "Dallas",
+  "Paris",
+  "Denver",
+  "Toronto",
+  "Montreal",
+  "Tokyo",
+  "Shanghai"
 ];
 
 const SearchParams = () => {
