@@ -24,7 +24,7 @@ const Details = () => {
   }
 
   const house = results.data;
-  console.log("LATEST: ", house);
+  
   return (
     <div className="details">
       <Carousel images={house.images} />

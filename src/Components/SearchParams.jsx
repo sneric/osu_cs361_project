@@ -25,11 +25,9 @@ const SearchParams = () => {
   const [homeStyles] = useHouseList(location);
 
   const results = useQuery(["search", requestParams], getSearch);
-  console.log("CHECK getSearch: ", results?.data?.houses);
 
   let houses = results?.data?.houses ?? [];
 
-  console.log("CHECK houses: ", houses);
   return (
     <div className="search-params">
       <div className="details">
@@ -61,7 +59,6 @@ const SearchParams = () => {
           <div>
             <h1>You bought {boughtHouse.name}!</h1>
             <b></b>
-            {/* <img src={boughtHouse.images[0]} alt={boughtHouse.name} /> */}
           </div>
         ) : null}
 
